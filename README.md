@@ -25,41 +25,58 @@ project-folder/
 
 ---
 
-## Features
+# How the Server Works
 
-- Node.js server using **HTTP module** (no frameworks)
-- Serves static HTML pages
-- Centralized file service module
-- Clean folder structure
-- Styled using CSS
-- Supports routing for:
-  - `/home`
-  - `/about`
-  - `/contact`
-- Custom **404 Page Not Found**
+This project is a simple Node.js web server built using the native `http` module.  
+It handles routing, serves HTML files, provides CSS styling, and returns a custom 404 page for invalid routes.
 
 ---
 
-## Installation & Setup
+## 🚀 Server Functionality (Brief Explanation)
 
-1. Install Node.js (if not installed):  
-   https://nodejs.org/
+### **1. Route Handling**
+The server checks the incoming request URL and returns the correct page:
 
-2. Clone or download this project.
+- `/` or `/home` → home page  
+- `/about` → about page  
+- `/contact` → contact page  
+- Anything else → custom `404.html`
 
-3. Open the project folder in terminal and install dependencies:
+Each route sends the appropriate HTTP status code:
+- **200** for valid pages  
+- **404** for unknown routes  
 
-   ```bash
-   npm install
+---
+
+## 🔧 File Loading Using a Module
+
+A separate helper file (`fileService.js`) is used to read HTML and CSS files.  
+This makes the server cleaner and keeps file operations modular.
+
+---
+
+## 🎨 Serving CSS
+
+When the request matches `/styles.css`, the server sends the CSS file with the correct header (`text/css`).  
+This ensures all pages load their styles correctly.
+
+---
+
+## ❗ Error Handling
+
+Invalid routes automatically return a custom **404 Not Found** page instead of a broken or empty response.
+
+---
+
+The server:
+
+1. Listens on **port 3000**
+2. Identifies which page the user wants
+3. Loads that file asynchronously
+4. Sends the file back with the right HTTP status and content type
+5. Shows a custom 404 page for incorrect URLs
+
+This makes the application simple, modular, and easy to maintain.
+
    ```
 
-4. Start the server:
-
-   ```bash
-   node server.js
-   ```
-
-5. Open your browser and visit:
-   ```bash
-   http://localhost:3000/home
-   ```
