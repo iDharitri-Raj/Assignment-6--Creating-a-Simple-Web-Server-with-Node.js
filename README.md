@@ -25,7 +25,7 @@ project-folder/
 
 ---
 
-# How the Server Works
+## How the Server Works
 
 This project is a simple Node.js web server built using the native `http` module.  
 It handles routing, serves HTML files, provides CSS styling, and returns a custom 404 page for invalid routes.
@@ -79,4 +79,5 @@ The server:
 This makes the application simple, modular, and easy to maintain.
 
    ```
+
 
