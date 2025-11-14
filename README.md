@@ -34,7 +34,7 @@ It handles routing, serves HTML files, provides CSS styling, and returns a custo
 
 ## 🚀 Server Functionality (Brief Explanation)
 
-### **1. Route Handling**
+### **Route Handling**
 The server checks the incoming request URL and returns the correct page:
 
 - `/` or `/home` → home page  
@@ -48,26 +48,6 @@ Each route sends the appropriate HTTP status code:
 
 ---
 
-## 🔧 File Loading Using a Module
-
-A separate helper file (`fileService.js`) is used to read HTML and CSS files.  
-This makes the server cleaner and keeps file operations modular.
-
----
-
-## 🎨 Serving CSS
-
-When the request matches `/styles.css`, the server sends the CSS file with the correct header (`text/css`).  
-This ensures all pages load their styles correctly.
-
----
-
-## ❗ Error Handling
-
-Invalid routes automatically return a custom **404 Not Found** page instead of a broken or empty response.
-
----
-
 The server:
 
 1. Listens on **port 3000**
@@ -77,7 +57,3 @@ The server:
 5. Shows a custom 404 page for incorrect URLs
 
 This makes the application simple, modular, and easy to maintain.
-
-   ```
-
-
